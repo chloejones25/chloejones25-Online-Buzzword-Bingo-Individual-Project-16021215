@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="BuzzwordBingo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+    <title>buzzword bingo</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="createcard_css.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400italic' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+    <script type="text/javascript" src="createcard.js"></script>
+
+</head>
+<body>
+    <div id="navigation">
+    <img src="buzzword_logo.png" width="400" height="250"></
+    </div>
+            
+    <div class="intro">  
+        <h1>Create a Personalised Bingo Card</h1>
+        </br>
+        <h2>Add 16 buzzwords to create a bingo card<br>Get 4 in a row to win!</h2>
+        </br>
+        <div class="buzzform" ng-controller="PostCtrl as post">
+            <form ng-submit="post.addBuzzword(post.newBuzzword)">
+                <input type="text" ng-model="post.newBuzzword"/>
+                <button type="submit">Add</button>
+            </form>
+    </div>
+    </br>
+<a href="index.html">
+	<button id="home-page">Home Page</button>
+</a>
+    <div class="buzzcontainer"> 
+        <div ng-controller="ListCtrl as list">
+            <div class="buzzbox" ng-repeat="buzzword in list.buzzwords | limitTo: 16" ng-style="myStyle" ng-click="myStyle={'background-color':'#E9967A'}"><p>{{buzzword.text}}</p></div>
+        </div>
+    </div>
+    </br>
+</body>
+</html>

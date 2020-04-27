@@ -1,0 +1,68 @@
+html{
+	background-color: #f0efde;
+	background-image: url('back.png');
+	font-family: 'Calibri', serif;
+    	font-style: italic;
+	
+	font-weight: bold; 
+	}
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	color: black;
+	margin: 0;
+	font-family: 'Calibri', serif;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 6vh;
+	text-align: center;
+}
+
+.container{
+	width: 100%;
+	height: 100vh;
+	margin-top: 10px;
+	text-align: center;
+}
+.btn{
+	border: 1px solid #FA8072;
+	background: none;
+	padding: 10px 20px;
+	font-size: 20px;
+	font-family: "calibri";
+	font-weight: bold;
+	cursor: pointer;
+	margin: 10px;
+	transition: 0.8s;
+	position: relative;
+	overflow: hidden;
+	
+}
+
+.btn1,.btn2,.btn3{
+	color: #FA8072;
+}
+.btn1:hover,.btn2:hover,.btn3:hover{
+	color: #fff;
+}
+.btn::before{
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 0&;
+	background: #FA8072;
+	z-index: -1;
+	transition: 0.8s;
+}
+.btn1::before,.btn2,.btn3::before{
+	top:0;
+	border-radius: 0 0 50% 50%;
+}
+.btn1:hover::before,.btn2:hover::before,.btn3:hover::before{
+	height: 180%;
+}
